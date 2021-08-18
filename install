@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+install -c -o root -g wheel -m 644 .zshrc /usr/local/etc/zshrc
+install -c -o root -g wheel -m 644 functions/prompt_wunjo_setup /usr/local/share/zsh/site-functions/ 
+install -c -o root -g wheel -m 644 functions/zgitinit /usr/local/share/zsh/site-functions/ 
