@@ -89,7 +89,9 @@ prompt_wunjo_setup() {
 	pc[date]='cyan'
 	pc[time]='Blue'
 	pc[host]='Green'
-	pc[user]='cyan'
+	pc[user]='Green'
+	[[ $EUID -eq 0 ]] && pc[host]='Red'
+	[[ $EUID -eq 0 ]] && pc[user]='Red'
 	pc[punc]='yellow'
 	pc[line]='magenta'
 	pc[hist]='green'
@@ -117,7 +119,7 @@ prompt_wunjo_setup() {
 
 	PROMPT=
 	if [ $verbose ]; then
-		PROMPT+="$pc[host]%m$pc[reset] "
+		PROMPT+="$pc[user]%n$pc[reset]@$pc[host]${${(%):-%M}%.mempool.space}$pc[reset] "
 	fi
 	PROMPT+="$pc[path]%(2~.%~.%/)$pc[reset]"
 	PROMPT+="\$(prompt_wunjo_scm_status)"
