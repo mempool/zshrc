@@ -50,9 +50,10 @@ get_prompt_color_indexes() {
 }
 
 init_editor() {
-	for i in vim vi; do
+	for i in nvim vim vi; do
 		if which "$i" 2>&1 1>/dev/null; then
 			export EDITOR="$i"
+			alias vi=$i
 			break
 		fi
 	done
@@ -320,12 +321,6 @@ init_aliases() {
 	# Terminal.app related
 	if type 'term' > /dev/null 2>&1; then
 		alias t="term -t"
-	fi
-
-	# if we have vim, vi is vim also shotcut v is vim.
-	if type 'vim' > /dev/null 2>&1; then
-		alias vi='vim'
-		alias v='vim'
 	fi
 }
 
