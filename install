@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+cd /tmp
 wget https://raw.githubusercontent.com/mempool/zshrc/master/.zshrc && install -c -o root -g wheel -m 644 .zshrc /usr/local/etc/zshrc
-wget https://raw.githubusercontent.com/mempool/zshrc/master/functions/prompt_wunjo_setup && install -c -o root -g wheel -m 644 /usr/local/share/zsh/site-functions/ 
-wget https://raw.githubusercontent.com/mempool/zshrc/master/functions/zgitinit && install -c -o root -g wheel -m 644 functions/zgitinit /usr/local/share/zsh/site-functions/ 
+wget https://raw.githubusercontent.com/mempool/zshrc/master/functions/prompt_wunjo_setup && install -c -o root -g wheel -m 644 prompt_wunjo_setup /usr/local/share/zsh/site-functions/ 
+wget https://raw.githubusercontent.com/mempool/zshrc/master/functions/zgitinit && install -c -o root -g wheel -m 644 zgitinit /usr/local/share/zsh/site-functions/ 
